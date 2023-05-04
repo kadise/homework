@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<title>垃圾分类器</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<div class="body-bg">
+                                                <video autoplay muted loop id="bg-video">
+  <source src="./images/background.mp4" type="video/mp4">
+</video>
+<style>
+  #bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+</style>
+
+			<div class="body-content">
+				<h1>垃圾分类器（爱护环境，人人有责）</h1>
+				<p>请投放垃圾到相应的垃圾桶中：</p>
+				<div class="garbage-container">
+					<div class="garbage-bin recyclable">
+						<h2>可回收垃圾</h2>
+						<img src="./images/recyclable.png" alt="可回收垃圾" />
+						<p>(<span id="recyclable-count">0</span>)</p>
+					</div>
+					<div class="garbage-bin hazardous">
+						<h2>有害垃圾</h2>
+						<img src="./images/hazardous.png" alt="有害垃圾" />
+						<p>(<span id="hazardous-count">0</span>)</p>
+					</div>
+					<div class="garbage-bin organic">
+						<h2>湿垃圾</h2>
+						<img src="./images/organic.jpg" alt="湿垃圾" />
+						<p>(<span id="organic-count">0</span>)</p>
+					</div>
+					<div class="garbage-bin non-organic">
+						<h2>干垃圾</h2>
+						<img src="./images/non-organic.png" alt="干垃圾" />
+						<p>(<span id="non-organic-count">0</span>)</p>
+					</div>
+				</div>
+				<p>垃圾车里现在有 <span id="total-count">0</span> 个垃圾</p>
+				<div class="garbage-truck">
+					<img
+						src="./images/garbage-truck.png"
+						alt="垃圾车"
+						id="garbage-truck"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<!-- 弹出框的遮罩层 -->
+		<div class="overlay"></div>
+
+		<!-- 弹出框的容器 -->
+		<div class="dialog">
+		<h2>小朋友，请回答一个问题</h2>
+		<p id="question_item" style="text-align: left;"></p>
+		<button class="primary" id="answer_yes">是</button>
+		<button class="secondary" id="answer_no">否</button>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
